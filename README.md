@@ -52,8 +52,8 @@ sudo systemctl reload apache2
 ```shell
 PHP_VERSION=8.4
 sudo apt -y install lsb-release apt-transport-https ca-certificates &&
-sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg &&
-sudo echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list &&
+sudo apt-get -y install ca-certificates apt-transport-https software-properties-common &&
+sudo add-apt-repository ppa:ondrej/php &&
 sudo apt update &&
 sudo apt install php$PHP_VERSION -y &&
 sudo apt install php$PHP_VERSION-{bcmath,bz2,cgi,curl,fpm,xml,mysql,zip,imap,intl,imagick,ldap,gd,mbstring,mysql,pgsql,soap,xmlrpc} -y &&
