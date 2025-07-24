@@ -22,8 +22,8 @@ sudo mv mkcert-v*-linux-amd64 /usr/local/bin/mkcert
 ⏱️ Copy the content of the cell below, paste it into the terminal (shift+ctrl+v), press the “enter” key and wait.
 ```shell
 sudo apt install apache2 -y &&
-sudo ufw allow OpenSSH &&
-sudo ufw allow 'WWW Full' &&
+sudo ufw allow ssh &&
+sudo ufw allow ufw allow 80,443/tcp &&
 sudo apt update &&
 sudo apt upgrade -y &&
 sudo a2dissite 000-default &&
