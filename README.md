@@ -106,7 +106,7 @@ sudo bash -c "cat <<EOT >> /etc/hosts
 EOT" &&
 sudo a2enmod ssl &&
 mkcert -install &&
-mkcert -key-file $VH_NAME.key -cert-file $VH_NAME.crt $VH_NAME &&
+sudo mkcert -key-file $VH_NAME.key -cert-file $VH_NAME.crt $VH_NAME &&
 sudo mv $VH_NAME.key /etc/ssl/private/$VH_NAME.key &&
 sudo mv $VH_NAME.crt /etc/ssl/certs/$VH_NAME.crt &&
 sudo systemctl reload apache2
